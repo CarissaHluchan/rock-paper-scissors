@@ -3,7 +3,7 @@ body {
     justify-content: space-around;
     text-align: center;
     background: #ffe280;
-    /* height: 50vh; */
+    height: 100vh;
     /* min-height: 790px;
     min-width: 730px;
     max-width: 1200px; */
@@ -15,77 +15,77 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: #e5cb73;
-    width: 60vw;
-    height: 550px;
+    width: 60%;
+    height: 75%
 }
 
 .section-space {
-    height: 9vw;
+    height: 10%;
 }
 
 section {
     display: flex;
     flex-direction: column;
     background-color: #e5cb73;
-    width: 17vw;
-    height: 550px;
-    min-width: 15vw;
+    width: 18%;
+    height: 75%;
 }
 
 .section-space {
-    height: 6vh;
+    height: 10%;
 }
 
 container {
     display: flex;
     border: 2px solid;
-    height: 500px;
-    width: 60vw;
+    height: 75%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+}
+
+h2 {
+    font-size: calc(3vw + 1vh);
+}
+
+p {
+    font-size: calc(1vw + 1vh);
+    margin: 0;
 }
 
 .classic,
 .difficult {
     display: flex;
     background-color: #b7a25c;
-    width: 33vw;
+    width: 65%;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .classic {
-    height: 155px;
+    height: 40%;
 }
 
 .difficult {
-    height: 190px;
+    height: 53%;
 }
 
 
 h1 {
-    font-size: 5vw;
-}
-
-h2 {
-    font-size: 3vw;
+    font-size: calc(3vw + 1vh);
 }
 
 h3 {
     margin: 0;
-    font-size: 2.5vw;
+    font-size: calc(1vw + 1vh);
 }
 
 h4 {
-    font-size: 1.5vw;
+    font-size: calc(1.5vw + 1vh);
 }
 
 h5 {
-    font-size: 1.75vw;
+    font-size: calc(1.75vw + 1vh);
     margin: 1vh;
-}
-
-p {
-    font-size: 2vw;
-    margin: 0;
 }
