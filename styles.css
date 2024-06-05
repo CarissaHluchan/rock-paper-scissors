@@ -35,10 +35,10 @@ section {
     height: 10%;
 }
 
-container {
+.select-game-view {
     display: flex;
     border: 2px solid;
-    height: 75%;
+    height: 89%;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -46,11 +46,12 @@ container {
 }
 
 h2 {
-    font-size: calc(3vw + 1vh);
+    font-size: calc(1vw + 1vh);
+    margin: 4%
 }
 
 p {
-    font-size: calc(1vw + 1vh);
+    font-size: calc(.75vw + .75vh);
     margin: 0;
 }
 
@@ -64,11 +65,11 @@ p {
 }
 
 .classic {
-    height: 40%;
+    height: 20%;
 }
 
 .difficult {
-    height: 53%;
+    height: 30%;
 }
 
 
@@ -88,4 +89,25 @@ h4 {
 h5 {
     font-size: calc(1.75vw + 1vh);
     margin: 1vh;
+}
+
+.game-play {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%
+}
+
+.classic-fighters {
+    display: flex;
+}
+
+img {
+    height: 16vw;
+    width: 16vw;
+}
+
+.difficult-fighters {
+    display: flex;
 }
