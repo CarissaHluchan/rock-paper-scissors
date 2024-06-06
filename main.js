@@ -21,7 +21,7 @@ var ufoPick = document.querySelector('#ufo');
 var humanWins = document.querySelector('#humanWins');
 var comWins = document.querySelector('#comWins');
 
-var fighterPicks = document.querySelectorAll('.fighter-pick')
+var fighterPicks = document.querySelectorAll('.fighter-pick');
 
 /** ------------------ eventListeners--------------------- */
 addEventListener('load', showSelectGameView);
@@ -36,10 +36,10 @@ lizardPick.addEventListener('click', handleFighterChoice);
 ufoPick.addEventListener('click', handleFighterChoice);
 
 /**-----------------global variables--------------------------- */
-var humanPlayer = createHumanPlayer();// function createPlayer, createGame, updatePlayer, domfunctions
+var humanPlayer = createHumanPlayer();
 var computerPlayer = createComputerPlayer();
 var game = createGame();
-var settings = createSettings();//optional
+var settings = createSettings();
 var classicChoices = ['rock', 'paper', 'scissors'];
 var difficultChoices = ['rock', 'paper', 'scissors', 'lizard', 'ufo'];
 
@@ -80,7 +80,7 @@ function showResultsView() {
     resultsView.classList.remove('hidden');
 }
 
-/**------------------Players-DM---------------- */
+/**------------------Global Variables DM---------------- */
 function createHumanPlayer() {
     var humanPlayer = {
         player: 'Human',
@@ -115,13 +115,7 @@ function createSettings() {
     return settings;
 };
 
-//add event listener for each click of human player
-// call random selection for computer click
-// update the dom to display choices from both
-// call a winner or a draw
-// set timeout outside function
-// reset the game
-
+/**----------------------gameplay------------------------------------------ */
 function handleFighterChoice(event) {
     game.humanPlayerSelection = event.target.id;
     game.computerPlayerSelection = createComputerChoice();
@@ -242,7 +236,6 @@ function showResultsOnDOM() {
 };
 
 function resetGame() {
-    // console.log('success!!!!')
     if (settings.currentSelection === classicChoices) {
         showClassicGamePlay();
     };
@@ -251,5 +244,5 @@ function resetGame() {
         showDifficultGamePlay();
     };
     game = createGame();
-    clearFighterPicks()
+    clearFighterPicks();
 };

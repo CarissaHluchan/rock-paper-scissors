@@ -2,7 +2,6 @@ body {
     display: flex;
     justify-content: space-around;
     text-align: center;
-    /* background: #ffe280; */
     height: 100vh;
     font-family: "Open Sans", sans-serif;
 }
@@ -42,7 +41,7 @@ h4 {
     font-size: calc(1vw + 1vh);
 }
 
-/* ----------Seclect which game to paly ------------- */
+/* ------------------Seclect which game to paly ------------- */
 .select-game-view {
     display: flex;
     height: 100%;
