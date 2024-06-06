@@ -45,7 +45,7 @@ var difficultChoices = ['rock', 'paper', 'scissors', 'lizard', 'ufo'];
 
 /**------------------------- functions------------------------------- */
 
-/**-------------------Views-DOM------------------- */
+/**-------------------Views-------------------- */
 function showSelectGameView() {
     selectGameView.classList.remove('hidden');
     gameplayView.classList.add('hidden');
@@ -154,54 +154,24 @@ function createGameResult() {
         return 'aDraw';
     };
 
-    if (humSelect === 'rock') {
-        if (comSelect === 'scissors') {
-            return 'youWon';
-        };
-
-        if (comSelect === 'lizard') {
-            return 'youWon';
-        };
+    if (humSelect === 'rock' && comSelect === 'scissors' || comSelect === 'lizard') {
+        return 'youWon';
     };
 
-    if (humSelect === 'paper') {
-        if (comSelect === 'rock') {
-            return 'youWon';
-        };
-
-        if (comSelect === 'ufo') {
-            return 'youWon';
-        };
+    if (humSelect === 'paper' && comSelect === 'rock' || comSelect === 'ufo') {
+        return 'youWon';
     };
 
-    if (humSelect === 'scissors') {
-        if (comSelect === 'paper') {
-            return 'youWon';
-        };
-
-        if (comSelect === 'ufo') {
-            return 'youWon';
-        };
+    if (humSelect === 'scissors' && comSelect === 'paper' || comSelect === 'ufo') {
+        return 'youWon';
     };
 
-    if (humSelect === 'lizard') {
-        if (comSelect === 'paper') {
-            return 'youWon';
-        };
-
-        if (comSelect === 'ufo') {
-            return 'youWon';
-        };
+    if (humSelect === 'lizard' && comSelect === 'paper' || comSelect === 'ufo') {
+        return 'youWon';
     };
 
-    if (humSelect === 'ufo') {
-        if (comSelect === 'scissors') {
-            return 'youWon';
-        };
-
-        if (comSelect === 'rock') {
-            return 'youWon';
-        };
+    if (humSelect === 'ufo' && comSelect === 'scissors' || comSelect === 'rock') {
+        return 'youWon';
     };
     return 'comWon';
 };
