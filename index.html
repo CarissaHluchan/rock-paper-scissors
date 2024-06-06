@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 </head>
+
 <body background="./assets/20230516_211616.jpg">
     <section>
         <div class="section-space"></div>
@@ -18,7 +20,7 @@
         <header>
             <h1>Rock, Paper, Scissors</h1>
         </header>
-        <box class="view select-game-view">
+        <container class="select-game-view">
             <h5>Choose your game!</h5>
             <box class="classic-selection">
                 <h2>🪨Classic✂️</h2>
@@ -37,8 +39,8 @@
                 <p>alien vaporises scissors & rock</p>
                 <div class="between-space"></div>
             </box>
-        </box>
-        <box class="view gameplay-view hidden">
+        </container>
+        <container class="gameplay-view">
             <h5>Choose your fighter!</h5>
             <div class="between-space"></div>
             <box class="classic-fighters">
@@ -55,7 +57,7 @@
                     <h6 id="scissorsPick" class="fighter-pick"></h6>
                 </box>
             </box>
-            <box class="difficult-fighters hidden">
+            <box class="difficult-fighters">
                 <box class="fighter-box">
                     <img id="lizard" src="./assets/lizard.png" alt="lizard">
                     <h6 id="lizardPick" class="fighter-pick"></h6>
@@ -68,8 +70,8 @@
             <div class="between-space"></div>
             <button class="change-game-button">Change Game</button>
             <div class="between-space"></div>
-        </box>
-        <box class="results-view hidden">
+        </container>
+        <container class="results-view">
             <h5 id="winner"></h5>
             <box class="results">
                 <box class="fighter-box">
@@ -79,7 +81,7 @@
                     <img id="comChoiceImg">
                 </box>
             </box>
-        </box>
+        </container>
     </main>
     <section>
         <div class="section-space"></div>
@@ -89,4 +91,5 @@
     </section>
     <script type="text/javascript" src="main.js"></script>
 </body>
+
 </html>
