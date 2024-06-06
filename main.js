@@ -19,17 +19,19 @@ classicSelection.addEventListener('click', showClassicGamePlay);
 difficultSelection.addEventListener('click', showDifficultGamePlay);
 changeGameButton.addEventListener('click', showSelectGameView);
 
-rockPick.addEventListener('click',);
-paperPick.addEventListener('click',);
-scissorPick.addEventListener('click',);
-lizardPick.addEventListener('click',);
-ufoPick.addEventListener('click',);
+rockPick.addEventListener('click', handleFighterChoice);
+paperPick.addEventListener('click', handleFighterChoice);
+scissorPick.addEventListener('click', handleFighterChoice);
+lizardPick.addEventListener('click', handleFighterChoice);
+ufoPick.addEventListener('click', handleFighterChoice);
 
 /**-----------------global variables--------------------------- */
-var humanPlayer = {};// function createPlayer, createGame, updatePlayer, domfunctions
-var computerPlayer = {};
-var game = {};
-var settings = {};//optional
+var humanPlayer = createHumanPlayer();// function createPlayer, createGame, updatePlayer, domfunctions
+var computerPlayer = createComputerPlayer();
+var game = createGame();
+var settings = createSettings();//optional
+var classicChoices = ['rock', 'paper', 'scissors'];
+var difficultChoices = ['rock', 'paper', 'scissors', 'lizard', 'ufo'];
 
 /**------------------------- functions------------------------------- */
 
@@ -46,6 +48,7 @@ function showClassicGamePlay() {
     gameplayView.classList.remove('hidden');
     classicFighters.classList.remove('hidden');
     difficultFighters.classList.add('hidden');
+    settings.currentSelection = classicChoices;
 };
 
 function showDifficultGamePlay() {
@@ -53,32 +56,125 @@ function showDifficultGamePlay() {
     gameplayView.classList.remove('hidden');
     classicFighters.classList.remove('hidden');
     difficultFighters.classList.remove('hidden');
-}
+    settings.currentSelection = difficultChoices;
+};
 
 /**------------------Players-DM---------------- */
 function createHumanPlayer() {
     var humanPlayer = {
-        player: human,
+        player: 'Human',
         token: '😃',
         wins: 0,
     }
     return humanPlayer;
-}
+};
 
 function createComputerPlayer() {
     var computerPlayer = {
-        player: computer,
+        player: 'Computer',
         token: '💻',
         wins: 0,
     }
     return computerPlayer;
-}
+};
 
 function createGame() {
-    //add event listener for each click of human player
-    // call random selection for computer click
-    // update the dom to display choices from both
-    // call a winner or a draw
-    // set timeout outside function
-    // reset the game
+    var gamePlay = {
+        humanPlayerSelection: null,
+        computerPlayerSelection: null,
+        gameResult: null,
+    }
+    return gamePlay;
+};
+
+function createSettings() {
+    var settings = {
+        currentSelection: null,
+    }
+    return settings;
+};
+
+//add event listener for each click of human player
+// call random selection for computer click
+// update the dom to display choices from both
+// call a winner or a draw
+// set timeout outside function
+// reset the game
+
+function handleFighterChoice(event) {
+    // console.log(event.target.id)
+    game.humanPlayerSelection = event.target.id;
+    game.computerPlayerSelection = createComputerChoice();
+    game.gameResult = createGameResult();
+    // console.log(game)
+    ///update win totals
+    // update dom view
+};
+
+function createComputerChoice() {
+    var randomIndex = Math.floor(Math.random() * settings.currentSelection.length)
+    return settings.currentSelection[randomIndex];
+};
+
+function createGameResult() {
+    var comSelect = game.computerPlayerSelection
+    var humSelect = game.humanPlayerSelection
+    if (comSelect === humSelect) {
+        return 'aDraw';
+    };
+
+    if (humSelect === 'rock') {
+        if (comSelect === 'scissors') {
+            return 'youWon';
+        };
+
+        if (comSelect === 'lizard') {
+            return 'youWon';
+        };
+    };
+
+    if (humSelect === 'paper') {
+        if (comSelect === 'rock') {
+            return 'youWon';
+        };
+
+        if (comSelect === 'ufo') {
+            return 'youWon';
+        };
+    };
+
+    if (humSelect === 'scissors') {
+        if (comSelect === 'paper') {
+            return 'youWon';
+        };
+
+        if (comSelect === 'ufo') {
+            return 'youWon';
+        };
+    };
+
+    if (humSelect === 'lizard') {
+        if (comSelect === 'paper') {
+            return 'youWon';
+        };
+
+        if (comSelect === 'ufo') {
+            return 'youWon';
+        };
+    };
+
+    if (humSelect === 'ufo') {
+        if (comSelect === 'scissors') {
+            return 'youWon';
+        };
+
+        if (comSelect === 'rock') {
+            return 'youWon';
+        };
+    };
+    return 'comWon';
+};
+
+function showResultsDOM() {
+
 }
