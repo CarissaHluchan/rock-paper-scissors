@@ -52,6 +52,10 @@ function showSelectGameView() {
     classicFighters.classList.add('hidden');
     difficultFighters.classList.add('hidden');
     resultsView.classList.add('hidden');
+    humanPlayer.wins = 0;
+    humanWins.innerText = `Wins: 0`;
+    computerPlayer.wins = 0;
+    comWins.innerHTML = `Wins: 0`
 };
 
 function showClassicGamePlay() {
