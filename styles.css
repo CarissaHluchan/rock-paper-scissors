@@ -7,15 +7,11 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(229, 203, 115, 0.75);
-    width: 60%;
-    height: 100%
+h1 {
+    font-size: calc(3vw + 1vh);
 }
 
+/* ------------------------Score Space------------------ */
 .section-space {
     height: 10%;
 }
@@ -28,10 +24,25 @@ section {
     height: 100%;
 }
 
-.section-space {
-    height: 10%;
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(229, 203, 115, 0.75);
+    width: 60%;
+    height: 100%
 }
 
+h3 {
+    margin: 0;
+    font-size: calc(1vw + 1vh);
+}
+
+h4 {
+    font-size: calc(1vw + 1vh);
+}
+
+/* ----------Seclect which game to paly ------------- */
 .select-game-view {
     display: flex;
     height: 100%;
@@ -39,17 +50,6 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-}
-
-h2 {
-    font-size: calc(1vw + 1vh);
-    margin: 0;
-    margin-bottom: 4%;
-}
-
-p {
-    font-size: 1.5vh;
-    margin: 0;
 }
 
 .classic,
@@ -66,30 +66,29 @@ p {
       }
 }
 
-h1 {
-    font-size: calc(3vw + 1vh);
-}
-
-h3 {
+p {
+    font-size: 1.5vh;
     margin: 0;
+}
+
+h2 {
     font-size: calc(1vw + 1vh);
+    margin: 0;
+    margin-bottom: 4%;
 }
 
-h4 {
-    font-size: calc(1vw + 1vh);
-}
-
-h5 {
-    font-size: calc(1.75vw + 1vh);
-    margin: 1vh;
-}
-
-.game-play {
+/*------------------------ Gameplay View----------------------- */
+.gameplay-view {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
     width: 100%
+}
+
+.classic-fighters,
+.difficult-fighters {
+    display: flex;
 }
 
 .fighter-box{
@@ -100,11 +99,6 @@ h5 {
     width: min-content;
 }
 
-.classic-fighters,
-.difficult-fighters {
-    display: flex;
-}
-
 img {
     height: 16vw;
     width: 16vw;
@@ -112,15 +106,6 @@ img {
     &:hover {
         cursor: pointer;
       }
-}
-
-
-/* .difficult-fighters {
-    display: flex;
-} */
-
-.game-play-space {
-    height: 15%
 }
 
 button {
@@ -136,7 +121,22 @@ button {
       }
 }
 
+.game-play-space {
+    height: 15%
+}
+
+h5 {
+    font-size: calc(1.75vw + 1vh);
+    margin: 1vh;
+}
+
 h6 {
     margin: 0;
     font-size: calc(1vw + 1vh) ;
 }
+
+/*-------------------hidden---------------------------------*/
+.hidden {
+    display: none;
+}
+
