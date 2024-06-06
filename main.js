@@ -7,11 +7,21 @@ var classicSelection = document.querySelector('.classic-selection');
 var difficultSelection = document.querySelector('.difficult-selection');
 var changeGameButton = document.querySelector('.change-game-button');
 
+var resultsView = document.querySelector('.results-view');
+var humanChoiceImg = document.querySelector('#humanChoiceImg');
+var comChoiceImg = document.querySelector('#comChoiceImg');
+var winner = document.querySelector('#winner')
+
 var rockPick = document.querySelector('#rock');
 var paperPick = document.querySelector('#paper');
 var scissorPick = document.querySelector('#scissors');
 var lizardPick = document.querySelector('#lizard');
 var ufoPick = document.querySelector('#ufo');
+
+var humanWins = document.querySelector('#humanWins');
+var comWins = document.querySelector('#comWins');
+
+var fighterPicks = document.querySelectorAll('.fighter-pick')
 
 /** ------------------ eventListeners--------------------- */
 addEventListener('load', showSelectGameView);
@@ -41,6 +51,7 @@ function showSelectGameView() {
     gameplayView.classList.add('hidden');
     classicFighters.classList.add('hidden');
     difficultFighters.classList.add('hidden');
+    resultsView.classList.add('hidden');
 };
 
 function showClassicGamePlay() {
@@ -48,6 +59,7 @@ function showClassicGamePlay() {
     gameplayView.classList.remove('hidden');
     classicFighters.classList.remove('hidden');
     difficultFighters.classList.add('hidden');
+    resultsView.classList.add('hidden');
     settings.currentSelection = classicChoices;
 };
 
@@ -56,8 +68,17 @@ function showDifficultGamePlay() {
     gameplayView.classList.remove('hidden');
     classicFighters.classList.remove('hidden');
     difficultFighters.classList.remove('hidden');
+    resultsView.classList.add('hidden');
     settings.currentSelection = difficultChoices;
 };
+
+function showResultsView() {
+    selectGameView.classList.add('hidden');
+    gameplayView.classList.add('hidden');
+    classicFighters.classList.add('hidden');
+    difficultFighters.classList.add('hidden');
+    resultsView.classList.remove('hidden');
+}
 
 /**------------------Players-DM---------------- */
 function createHumanPlayer() {
@@ -102,14 +123,26 @@ function createSettings() {
 // reset the game
 
 function handleFighterChoice(event) {
-    // console.log(event.target.id)
     game.humanPlayerSelection = event.target.id;
     game.computerPlayerSelection = createComputerChoice();
     game.gameResult = createGameResult();
-    // console.log(game)
-    ///update win totals
-    // update dom view
+    for (var i = 0; i < fighterPicks.length; i++) {
+        if (fighterPicks[i].id === `${game.humanPlayerSelection}Pick`) {
+            fighterPicks[i].innerText = '😃';
+        };
+
+        if (fighterPicks[i].id === `${game.computerPlayerSelection}Pick`) {
+            fighterPicks[i].innerText += '💻';
+        };
+    };
+    setTimeout(showResultsOnDOM, 1000);
 };
+
+function clearFighterPicks() {
+    for (var i = 0; i < fighterPicks.length; i++) {
+        fighterPicks[i].innerText = '';
+    };
+}
 
 function createComputerChoice() {
     var randomIndex = Math.floor(Math.random() * settings.currentSelection.length)
@@ -175,6 +208,48 @@ function createGameResult() {
     return 'comWon';
 };
 
-function showResultsDOM() {
+function updateScores() {
+    if (game.gameResult === 'comWon') {
+        computerPlayer.wins += 1;
+    };
 
-}
+    if (game.gameResult === 'youWon') {
+        humanPlayer.wins += 1;
+    };
+};
+
+function showResultsOnDOM() {
+    updateScores();
+    humanWins.innerText = `Wins: ${humanPlayer.wins}`;
+    comWins.innerText = `Wins: ${computerPlayer.wins}`;
+    humanChoiceImg.src = `./assets/${game.humanPlayerSelection}.png`;
+    humanChoiceImg.alt = game.humanPlayerSelection;
+    comChoiceImg.src = `./assets/${game.computerPlayerSelection}.png`;
+    comChoiceImg.alt = game.computerPlayerSelection;
+    if (game.gameResult === 'youWon') {
+        winner.innerText = '😃You won!😃';
+    };
+
+    if (game.gameResult === 'comWon') {
+        winner.innerText = '💻Computer won this round!💻';
+    };
+
+    if (game.gameResult === 'aDraw') {
+        winner.innerText = '😭It\'s a draw!😭';
+    };
+    showResultsView();
+    setTimeout(resetGame, 2000);
+};
+
+function resetGame() {
+    // console.log('success!!!!')
+    if (settings.currentSelection === classicChoices) {
+        showClassicGamePlay();
+    };
+
+    if (settings.currentSelection === difficultChoices) {
+        showDifficultGamePlay();
+    };
+    game = createGame();
+    clearFighterPicks()
+};

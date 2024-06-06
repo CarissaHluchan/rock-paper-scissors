@@ -120,14 +120,25 @@ button {
     }
 }
 
-h5 {
-    font-size: calc(1.75vw + 1vh);
-    margin: 1vh;
-}
-
 h6 {
     margin: 0;
     font-size: calc(1vw + 1vh);
+}
+
+/*------------------Results View--------------------------------------*/
+.results-view {
+    display: flex;
+    flex-direction: column;
+}
+
+.results {
+    display: flex;
+    align-items: center;
+}
+
+h5 {
+    font-size: calc(1.75vw + 1vh);
+    margin: 1vh;
 }
 
 /*-------------------hidden, div space---------------------------------*/
