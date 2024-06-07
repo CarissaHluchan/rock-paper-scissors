@@ -154,23 +154,23 @@ function createGameResult() {
         return 'aDraw';
     };
 
-    if (humSelect === 'rock' && comSelect === 'scissors' || comSelect === 'lizard') {
+    if (humSelect === 'rock' && (comSelect === 'scissors' || comSelect === 'lizard')) {
         return 'youWon';
     };
 
-    if (humSelect === 'paper' && comSelect === 'rock' || comSelect === 'ufo') {
+    if (humSelect === 'paper' && (comSelect === 'rock' || comSelect === 'ufo')) {
         return 'youWon';
     };
 
-    if (humSelect === 'scissors' && comSelect === 'paper' || comSelect === 'ufo') {
+    if (humSelect === 'scissors' && (comSelect === 'paper' || comSelect === 'ufo')) {
         return 'youWon';
     };
 
-    if (humSelect === 'lizard' && comSelect === 'paper' || comSelect === 'ufo') {
+    if (humSelect === 'lizard' && (comSelect === 'paper' || comSelect === 'ufo')) {
         return 'youWon';
     };
 
-    if (humSelect === 'ufo' && comSelect === 'scissors' || comSelect === 'rock') {
+    if (humSelect === 'ufo' && (comSelect === 'scissors' || comSelect === 'rock')) {
         return 'youWon';
     };
     return 'comWon';
