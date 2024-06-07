@@ -22,15 +22,15 @@
         </header>
         <container class="select-game-view">
             <h5>Choose your game!</h5>
-            <box class="classic-selection">
+            <div class="classic-selection">
                 <h2>🪨Classic✂️</h2>
                 <p>Rock smashes scissors</p>
                 <p>Scissors cuts paper</p>
                 <p>Paper covers rock</p>
                 <div class="between-space"></div>
-            </box>
+            </div>
             <div class="between-space"></div>
-            <box class="difficult-selection">
+            <div class="difficult-selection">
                 <h2>🦎Difficult👽</h2>
                 <p>Rock smashes scissors & lizard</p>
                 <p>Scissors cuts paper & lizard</p>
@@ -38,49 +38,49 @@
                 <p>lizard eats paper & alien</p>
                 <p>alien vaporises scissors & rock</p>
                 <div class="between-space"></div>
-            </box>
+            </div>
         </container>
         <container class="gameplay-view">
             <h5>Choose your fighter!</h5>
             <div class="between-space"></div>
-            <box class="classic-fighters">
-                <box class="fighter-box">
+            <container class="classic-fighters">
+                <div class="fighter-box">
                     <img id="rock" src="./assets/rock.png" alt="rock">
                     <h6 id="rockPick" class="fighter-pick"></h6>
-                </box>
-                <box class="fighter-box">
+                </div>
+                <div class="fighter-box">
                     <img id="paper" src="./assets/paper.png" alt="paper">
                     <h6 id="paperPick" class="fighter-pick"></h6>
-                </box>
-                <box class="fighter-box">
+                </div>
+                <div class="fighter-box">
                     <img id="scissors" src="./assets/scissors.png" alt="scissors">
                     <h6 id="scissorsPick" class="fighter-pick"></h6>
-                </box>
-            </box>
-            <box class="difficult-fighters">
-                <box class="fighter-box">
+                </div>
+            </container>
+            <container class="difficult-fighters">
+                <div class="fighter-box">
                     <img id="lizard" src="./assets/lizard.png" alt="lizard">
                     <h6 id="lizardPick" class="fighter-pick"></h6>
-                </box>
-                <box class="fighter-box">
+                </div>
+                <div class="fighter-box">
                     <img id="ufo" src="./assets/ufo.png" alt="ufo">
                     <h6 id="ufoPick" class="fighter-pick"></h6>
-                </box>
-            </box>
+                </div>
+            </container>
             <div class="between-space"></div>
             <button class="change-game-button">Change Game</button>
             <div class="between-space"></div>
         </container>
         <container class="results-view">
             <h5 id="winner"></h5>
-            <box class="results">
-                <box class="fighter-box">
+            <container class="results">
+                <div class="fighter-box">
                     <img id="humanChoiceImg">
-                </box>
-                <box class="fighter-box">
+                </div>
+                <div class="fighter-box">
                     <img id="comChoiceImg">
-                </box>
-            </box>
+                </div>
+            </container>
         </container>
     </main>
     <section>
