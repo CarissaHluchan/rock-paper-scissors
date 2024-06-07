@@ -143,8 +143,9 @@ function clearFighterPicks() {
 }
 
 function createComputerChoice() {
-    var randomIndex = Math.floor(Math.random() * settings.currentSelection.length)
-    return settings.currentSelection[randomIndex];
+    var selection = settings.currentSelection;
+    var randomIndex = Math.floor(Math.random() * selection.length)
+    return selection[randomIndex];
 };
 
 function createGameResult() {
