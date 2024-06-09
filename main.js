@@ -42,6 +42,7 @@ var game = createGame();
 var settings = createSettings();
 var classicChoices = ['rock', 'paper', 'scissors'];
 var difficultChoices = ['rock', 'paper', 'scissors', 'lizard', 'ufo'];
+var clickInProgress = false;
 
 /**------------------------- functions------------------------------- */
 
@@ -121,6 +122,11 @@ function createSettings() {
 
 /**----------------------gameplay------------------------------------------ */
 function handleFighterChoice(event) {
+    if (clickInProgress) {
+        return;
+    };
+    
+    clickInProgress = true;
     game.humanPlayerSelection = event.target.id;
     game.computerPlayerSelection = createComputerChoice();
     game.gameResult = createGameResult();
@@ -220,4 +226,5 @@ function resetGame() {
     };
     game = createGame();
     clearFighterPicks();
+    clickInProgress = false;
 };
