@@ -35,4 +35,4 @@ Solidify and demonstrate understanding of:
 
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
-I used my knowledge of supporting functions to reactor the code for better readability. I learned about setTimeout global functions and how to apply them in JavaScript. I tested the games to identify bugs and addressed these. One included a function guard to allow for a click to be in progress. 
+I used my knowledge of supporting functions to refactor the code for better readability. I learned about setTimeout global functions and how to apply them in JavaScript. I tested the games to identify bugs and addressed these. One included a function guard to allow for a click to be in progress. 
