@@ -36,8 +36,8 @@ lizardPick.addEventListener('click', handleFighterChoice);
 ufoPick.addEventListener('click', handleFighterChoice);
 
 /**-----------------global variables--------------------------- */
-var humanPlayer = createHumanPlayer();
-var computerPlayer = createComputerPlayer();
+var humanPlayer = createPlayer('Human', '😃');
+var computerPlayer = createPlayer('Computer', '💻');
 var game = createGame();
 var settings = createSettings();
 var classicChoices = ['rock', 'paper', 'scissors'];
@@ -86,23 +86,14 @@ function showResultsView() {
 }
 
 /**------------------Global Variables DM---------------- */
-function createHumanPlayer() {
-    var humanPlayer = {
-        player: 'Human',
-        token: '😃',
+function createPlayer(playerType, token) {
+    var newPlayer = {
+        player: playerType,
+        token: token,
         wins: 0,
     }
-    return humanPlayer;
-};
-
-function createComputerPlayer() {
-    var computerPlayer = {
-        player: 'Computer',
-        token: '💻',
-        wins: 0,
-    }
-    return computerPlayer;
-};
+    return newPlayer;
+}
 
 function createGame() {
     var gamePlay = {
@@ -125,11 +116,16 @@ function handleFighterChoice(event) {
     if (clickInProgress) {
         return;
     };
-    
+
     clickInProgress = true;
     game.humanPlayerSelection = event.target.id;
     game.computerPlayerSelection = createComputerChoice();
     game.gameResult = createGameResult();
+    determinePlayer();
+    setTimeout(showResultsOnDOM, 1000);
+};
+
+function determinePlayer() {
     for (var i = 0; i < fighterPicks.length; i++) {
         if (fighterPicks[i].id === `${game.humanPlayerSelection}Pick`) {
             fighterPicks[i].innerText = '😃';
@@ -139,8 +135,7 @@ function handleFighterChoice(event) {
             fighterPicks[i].innerText += '💻';
         };
     };
-    setTimeout(showResultsOnDOM, 1000);
-};
+}
 
 function clearFighterPicks() {
     for (var i = 0; i < fighterPicks.length; i++) {
