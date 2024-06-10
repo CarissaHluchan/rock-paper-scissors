@@ -12,6 +12,15 @@ h1 {
     color: rgb(1, 63, 112)
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    color: rgb(0 43 77)
+}
+
 /* ------------------------Score Space and Main------------------ */
 .section-space {
     height: 10%;
@@ -37,7 +46,6 @@ section {
 main {
     width: 60%;
     height: 100%;
-    min-height: 700px;
     position: relative;
     top: 4vh;
 }
@@ -67,9 +75,9 @@ h3 {
 
 .classic-selection,
 .difficult-selection {
-    background-color: rgb(49, 129, 176);
+    background-color: rgb(97 193 249);
     border-radius: 15px;
-    width: 40%;
+    width: 65%;
     overflow: hidden;
     padding: 5%;
     position: relative;
@@ -131,7 +139,8 @@ button {
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     font-size: 2vw;
-    background-color: rgba(49, 129, 176);
+    color: rgb(0 43 77);
+    background-color: rgba(97 193 249);
     border: 0;
     border-radius: 15px;
 
