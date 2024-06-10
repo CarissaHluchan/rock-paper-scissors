@@ -83,7 +83,7 @@ function showResultsView() {
     classicFighters.classList.add('hidden');
     difficultFighters.classList.add('hidden');
     resultsView.classList.remove('hidden');
-}
+};
 
 /**------------------Global Variables DM---------------- */
 function createPlayer(playerType, token) {
@@ -93,7 +93,7 @@ function createPlayer(playerType, token) {
         wins: 0,
     }
     return newPlayer;
-}
+};
 
 function createGame() {
     var gamePlay = {
@@ -135,13 +135,13 @@ function determinePlayer() {
             fighterPicks[i].innerText += '💻';
         };
     };
-}
+};
 
 function clearFighterPicks() {
     for (var i = 0; i < fighterPicks.length; i++) {
         fighterPicks[i].innerText = '';
     };
-}
+};
 
 function createComputerChoice() {
     var selection = settings.currentSelection;
