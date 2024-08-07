@@ -22,7 +22,7 @@ I am a Front-End developer in the 6th week of an intensive Software Development 
 
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
-This was a solo project.
+Built & deployed by [Carissa Hluchan](https://github.com/CarissaHluchan)
 
 ### Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
@@ -35,4 +35,5 @@ Solidify and demonstrate understanding of:
 
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
-I used my knowledge of supporting functions to refactor the code for better readability. I learned about setTimeout global functions and how to apply them in JavaScript. I tested the games to identify bugs and addressed these. One included a function guard to allow for a click to be in progress. 
+- .setTimeout(): async funcationality. I used setTimeout functions and applied them in JavaScript. 
+- UI/UX: I tested the games to identify bugs in game play. I had to included a function guard to allow for a click to be in progress. 
