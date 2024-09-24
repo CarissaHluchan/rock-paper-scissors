@@ -4,9 +4,16 @@
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 The website I built is a game to play two versions of Rock, Paper, Scissors, a classic version, and a more difficult version with five fighter choices adding a lizard and alien/UFO. Users can select from either game and play against a computer. The user can select a fighter with a click. A view of their selection and the computer's randomly selected fighter is displayed with a token below the choices. A message is displayed informing the user of who won. The score is kept on the left and right sides of the screen counting for each player's wins. If the user clicks the change game button the home page is viewable and the score is reset to 0.
 
+### Technology:
+1. Vanilla JavaScript
+2. HTML
+3. CSS
+
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
-Click the deploy link to play the game or follow these steps:
+**1. Click the title to open the app.**
+
+**2. _(optional) Follow these steps:_**
 - Fork this project to your own Github account.
 - Clone the repository to your local machine.
 - `cd` into the project folder.
