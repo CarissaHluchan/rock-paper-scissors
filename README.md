@@ -42,5 +42,5 @@ Solidify and demonstrate understanding of:
 
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
-- .setTimeout(): async funcationality. I used setTimeout functions and applied them in JavaScript. 
+- .setTimeout(): async functionality. I used setTimeout functions and applied them in JavaScript. 
 - UI/UX: I tested the games to identify bugs in game play. I had to included a function guard to allow for a click to be in progress. 
